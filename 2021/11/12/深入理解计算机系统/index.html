@@ -20,19 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="即将步入工作，主要记录自己在折腾各种软件的过程中的一些操作记录，方便后续再次使用作为参考。">
+  <meta name="description" content="《深入理解Linux内核》阅读笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="部分软件、框架操作记录">
-<meta property="og:url" content="http://example.com/2021/10/10/%E4%B8%80%E4%BA%9B%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:title" content="深入理解计算机系统">
+<meta property="og:url" content="http://example.com/2021/11/12/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="Michael Su">
-<meta property="og:description" content="即将步入工作，主要记录自己在折腾各种软件的过程中的一些操作记录，方便后续再次使用作为参考。">
+<meta property="og:description" content="《深入理解Linux内核》阅读笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-10T02:56:15.951Z">
-<meta property="article:modified_time" content="2021-10-10T12:35:59.494Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211117090012.png">
+<meta property="article:published_time" content="2021-11-12T13:46:31.659Z">
+<meta property="article:modified_time" content="2021-11-17T01:00:15.347Z">
 <meta property="article:author" content="Michael Su">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211117090012.png">
 
-<link rel="canonical" href="http://example.com/2021/10/10/%E4%B8%80%E4%BA%9B%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/">
+<link rel="canonical" href="http://example.com/2021/11/12/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/">
 
 
 <script id="page-configurations">
@@ -45,7 +47,7 @@
   };
 </script>
 
-  <title>部分软件、框架操作记录 | Michael Su</title>
+  <title>深入理解计算机系统 | Michael Su</title>
   
 
 
@@ -147,7 +149,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/10/%E4%B8%80%E4%BA%9B%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/12/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -160,7 +162,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          部分软件、框架操作记录
+          深入理解计算机系统
         </h1>
 
         <div class="post-meta">
@@ -169,13 +171,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-10-10 10:56:15 / 修改时间：20:35:59" itemprop="dateCreated datePublished" datetime="2021-10-10T10:56:15+08:00">2021-10-10</time>
+              <time title="创建时间：2021-11-12 21:46:31" itemprop="dateCreated datePublished" datetime="2021-11-12T21:46:31+08:00">2021-11-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-17 09:00:15" itemprop="dateModified" datetime="2021-11-17T09:00:15+08:00">2021-11-17</time>
+              </span>
 
           
-            <div class="post-description">即将步入工作，主要记录自己在折腾各种软件的过程中的一些操作记录，方便后续再次使用作为参考。</div>
+            <div class="post-description">《深入理解Linux内核》阅读笔记</div>
 
         </div>
       </header>
@@ -186,27 +194,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="conda"><a href="#conda" class="headerlink" title="conda"></a>conda</h2><ol>
-<li><p>查看所有虚拟环境：<code>conda info -e</code></p>
-</li>
-<li><p>删除虚拟环境：<code>conda remove -n name --all</code></p>
-</li>
-<li><p>环境回滚：查看所有的记录<code>conda list --revisions</code>，恢复到指定的版本<code>conda install --revision [revision number]</code></p>
-</li>
-</ol>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ol>
-<li>修改本地配置：<code>git config --global user.name &quot;name&quot;</code>，<code>git config --global user.email &quot;email-address&quot;</code></li>
-<li></li>
-</ol>
-<h2 id="Hexo搭建博客"><a href="#Hexo搭建博客" class="headerlink" title="Hexo搭建博客"></a>Hexo搭建博客</h2><p>总体参考这篇博客：<a target="_blank" rel="noopener" href="https://kaiter-plus.gitee.io/2020/03/07/How_To_Freely_Build_Blog/">https://kaiter-plus.gitee.io/2020/03/07/How_To_Freely_Build_Blog/</a></p>
-<p>我碰到的问题：</p>
-<ol>
-<li><code>2.2.搭建</code>中，第一步应该是安装cnpm(猜测类似于国内镜像，后续涉及到<code>npm install</code>的内容可以使用<code>cnpm install</code>代替)，另外正确命令应该是<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>；</li>
-<li><code>4.5.上传到gitee</code>中，关于<code>_config.yml</code>的配置，如果你在Gitee中添加了<code>ssh公钥</code>，建议在<code>repo:</code>部分使用仓库的ssh地址(使用Http可能需要配置用户名和密码等内容？我没有具体尝试，至少我使用Http没有成功，后续研究明白后再来更新)；</li>
-<li><code>hexo init</code>后提示一个Warring，具体没有记录，随后执行<code>hexo s</code>会报错，然后提示<code>WARN Failed to install dependencies. Please run ‘npm install’ manually!</code>。输入<code>cnpm install</code>，多输入几次，直到不报错为止;</li>
-<li><code>Gitee Pages</code>同步还有问题，不知道是内容没有推送上去还是部署之类的有问题，主题一直显示有问题;</li>
-<li>主题为<code>Hexo-Next</code>主题，网上搜到的教程大部分基于Next-v5，现在应该是v8了，有许多改变，暂时不折腾了，作为一个记录贴，后续有精力再来进行美化之类的操作。</li>
-</ol>
+        <h3 id="C语言中TMin的写法"><a href="#C语言中TMin的写法" class="headerlink" title="C语言中TMin的写法"></a>C语言中TMin的写法</h3><p><code>#define INT_MAX 2147483647</code></p>
+<p><code>#define INT_MIN (-INT_MAX - 1)</code></p>
+<p>32位系统中，int的范围是-2147483648~2147483647，这样看起来，-2147483648没有超出范围。<br>但需要注意的是，计算机对负数的存储是以补码的形式存储，+2147483648的原码是<code>0x80000000</code>，-2147483648补码是<code>0x80000000</code>，因此存储就会被当作+2147483648，从而溢出。实际上，定义<code>int A = 0x80000000</code>，输出结果是-2147483648，对于<code>(-INT_MAX - 1)</code>的存储，是先将-2147483647和-1转换为补码后相加，因此不会溢出。</p>
+<h3 id="无符号数的溢出问题"><a href="#无符号数的溢出问题" class="headerlink" title="无符号数的溢出问题"></a>无符号数的溢出问题</h3><p><code>unsigned - unsigned</code>，结果还是<code>unsigned</code>，当结果为负值时(哪怕是-1)，按照<code>unsigned</code>的形式进行解读，结果也是一个很大的正数。</p>
+<p><img src="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211117090012.png" alt="20211117090012"></p>
 
     </div>
 
@@ -221,10 +213,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/10/12/%E8%AE%BA%E6%96%87%E6%A0%BC%E5%BC%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" rel="next" title="论文格式的一些记录">
-      论文格式的一些记录 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/11/01/PowerAQ-NodeEdit/" rel="prev" title="软件相关">
+      <i class="fa fa-chevron-left"></i> 软件相关
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/17/Linux%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" rel="next" title="Linux程序设计">
+      Linux程序设计 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -284,7 +279,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#conda"><span class="nav-number">1.</span> <span class="nav-text">conda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">2.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="nav-number">3.</span> <span class="nav-text">Hexo搭建博客</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80%E4%B8%ADTMin%E7%9A%84%E5%86%99%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">C语言中TMin的写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B0%E7%9A%84%E6%BA%A2%E5%87%BA%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">无符号数的溢出问题</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -300,7 +295,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
