@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
+<meta name="google-site-verification" content="UNeYoDA40cHUtCZwslthbkMPd11sMTgIdlPcK9KrbYk" />
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32_32.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16_16.ico">
@@ -27,12 +28,15 @@
 <meta property="og:site_name" content="Michael Su">
 <meta property="og:description" content="《深入理解Linux内核》阅读笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211117090012.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211124154243.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211124154327.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211124165316.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211124165602.png">
 <meta property="article:published_time" content="2021-11-12T13:46:31.659Z">
-<meta property="article:modified_time" content="2021-11-17T01:00:15.347Z">
+<meta property="article:modified_time" content="2021-11-24T08:56:37.236Z">
 <meta property="article:author" content="Michael Su">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211117090012.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211124154243.png">
 
 <link rel="canonical" href="http://example.com/2021/11/12/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/">
 
@@ -179,7 +183,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-17 09:00:15" itemprop="dateModified" datetime="2021-11-17T09:00:15+08:00">2021-11-17</time>
+                <time title="修改时间：2021-11-24 16:56:37" itemprop="dateModified" datetime="2021-11-24T16:56:37+08:00">2021-11-24</time>
               </span>
 
           
@@ -198,7 +202,14 @@
 <p><code>#define INT_MIN (-INT_MAX - 1)</code></p>
 <p>32位系统中，int的范围是-2147483648~2147483647，这样看起来，-2147483648没有超出范围。<br>但需要注意的是，计算机对负数的存储是以补码的形式存储，+2147483648的原码是<code>0x80000000</code>，-2147483648补码是<code>0x80000000</code>，因此存储就会被当作+2147483648，从而溢出。实际上，定义<code>int A = 0x80000000</code>，输出结果是-2147483648，对于<code>(-INT_MAX - 1)</code>的存储，是先将-2147483647和-1转换为补码后相加，因此不会溢出。</p>
 <h3 id="无符号数的溢出问题"><a href="#无符号数的溢出问题" class="headerlink" title="无符号数的溢出问题"></a>无符号数的溢出问题</h3><p><code>unsigned - unsigned</code>，结果还是<code>unsigned</code>，当结果为负值时(哪怕是-1)，按照<code>unsigned</code>的形式进行解读，结果也是一个很大的正数。</p>
-<p><img src="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211117090012.png" alt="20211117090012"></p>
+<h3 id="GCC-预处理、编译、汇编、链接"><a href="#GCC-预处理、编译、汇编、链接" class="headerlink" title="GCC 预处理、编译、汇编、链接"></a>GCC 预处理、编译、汇编、链接</h3><p><code>gcc -E test.c -o test.i</code>：预处理，<code>-E</code>—预处理后停止，不进行后续编译过程</p>
+<blockquote>
+<p>预处理过程中，对于<code>#define</code>定义的内容，在定义之后使用的内容，预处理会进行替换；在定义之前使用的内容，预处理不会进行替换。<br><img src="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211124154243.png" alt="20211124154243"><img src="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211124154327.png" alt="20211124154327"></p>
+</blockquote>
+<p><code>gcc -S test.i -o test.s</code>：编译，<code>-S</code>—编译后停止，不进行后续汇编过程</p>
+<p><code>gcc -c test.s -o test.o</code>：汇编，<code>-c</code>—不进行后续链接过程</p>
+<p><code>gcc test.o -o test</code>：链接</p>
+<p><img src="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211124165316.png" alt="20211124165316">                <img src="https://raw.githubusercontent.com/MichaelSu-821/blog-images/master/images20211124165602.png" alt="20211124165602"></p>
 
     </div>
 
@@ -279,7 +290,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80%E4%B8%ADTMin%E7%9A%84%E5%86%99%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">C语言中TMin的写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B0%E7%9A%84%E6%BA%A2%E5%87%BA%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">无符号数的溢出问题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80%E4%B8%ADTMin%E7%9A%84%E5%86%99%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">C语言中TMin的写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B0%E7%9A%84%E6%BA%A2%E5%87%BA%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">无符号数的溢出问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GCC-%E9%A2%84%E5%A4%84%E7%90%86%E3%80%81%E7%BC%96%E8%AF%91%E3%80%81%E6%B1%87%E7%BC%96%E3%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number">3.</span> <span class="nav-text">GCC 预处理、编译、汇编、链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
